@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Scorecards</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <div class="container mt-5">
+        <h2>Scorecards</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Recruiter Name</th>
+                    <th>Performance Scale</th>
+                    <th>Expected Interviews</th>
+                    <th>Achieved Interviews</th>
+                    <th>Total Submissions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="scorecard : ${scorecards}">
+                    <td th:text="${scorecard.id}"></td>
+                    <td th:text="${scorecard.recruiterName}"></td>
+                    <td th:text="${scorecard.performanceScale}"></td>
+                    <td th:text="${scorecard.expectedInterviews}"></td>
+                    <td th:text="${scorecard.achievedInterviews}"></td>
+                    <td th:text="${scorecard.totalSubmissions}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="mt-4">Add New Scorecard</h3>
+        <form action="/scorecards/add" method="post">
+            <div class="mb-2">
+                <input type="text" name="recruiterName" class="form-control" placeholder="Recruiter Name" required>
+            </div>
+            <div class="mb-2">
+                <input type="text" name="performanceScale" class="form-control" placeholder="Performance Scale" required>
+            </div>
+            <div class="mb-2">
+                <input type="number" name="expectedInterviews" class="form-control" placeholder="Expected Interviews" required>
+            </div>
+            <div class="mb-2">
+                <input type="number" name="achievedInterviews" class="form-control" placeholder="Achieved Interviews" required>
+            </div>
+            <div class="mb-2">
+                <input type="number" name="totalSubmissions" class="form-control" placeholder="Total Submissions" required>
+            </div>
+            <button type="submit" class="button button-red">Add Scorecard</button>
+        </form>
+        <br><br><br>
+        <a href="/" class="button button-white">Back to Home</a>
+    </div>
+</body>
+</html>

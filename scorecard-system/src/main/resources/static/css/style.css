@@ -1,0 +1,244 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    overflow: auto !important; /* Allows scrolling */
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+/* Animated Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: backgroundAnimation 12s infinite alternate ease-in-out;
+}
+
+/* Keyframes for Background Animation */
+@keyframes backgroundAnimation {
+    0% {
+        background: url('https://wallpapers.com/images/hd/office-worker-best-laptop-corporate-job-9bjgv24faioiqnvy.jpg') no-repeat center center fixed;
+        background-size: cover;
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        background: url('https://miro.medium.com/v2/resize:fit:1400/1*TumYeebBorE7zcxFa855KA.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff !important;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff4d4d !important;
+}
+
+/* Main Container */
+.container {
+    max-width: 95%;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    min-height: auto; /* Prevents height restriction */
+    overflow-x: auto; /* Ensures table scrolls horizontally if needed */
+}
+
+/* Table Styling */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Table Header */
+.table thead {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table thead th {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Table Body */
+.table tbody tr {
+    transition: all 0.3s ease-in-out;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.table tbody tr:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Table Cells */
+.table tbody td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Fixed Widths */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+    width: 50px;
+}
+
+.table th:nth-child(2),
+.table th:nth-child(3) {
+    width: 150px;
+}
+
+.table th:nth-child(4) {
+    width: 250px;
+}
+
+.table th:nth-child(5) {
+    width: 250px;
+}
+
+/* Buttons */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid black;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    min-width: 200px;
+    cursor: pointer;
+    box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.3), 
+                inset -3px -3px 8px rgba(255, 255, 255, 0.2),
+                4px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* White Button with Light Grey Gradient */
+.button-white {
+    background: linear-gradient(to bottom, #f9f9f9, #dcdcdc);
+    color: black;
+}
+
+.button-white:hover {
+    background: linear-gradient(to bottom, #e6e6e6, #c0c0c0);
+    transform: scale(1.07);
+}
+
+/* Red Button with Gradient and 3D Shadow */
+.button-red {
+    background: linear-gradient(to bottom, #ff4d4d, #cc0000);
+    color: white;
+    border: none;
+}
+
+.button-red:hover {
+    background: linear-gradient(to bottom, #e60000, #990000);
+    transform: scale(1.07);
+}
+
+/* Dark Grey Button with Gradient and 3D Shadow */
+.button-dark-grey {
+    background: linear-gradient(to bottom, #444, #222);
+    color: white;
+    border: none;
+}
+
+.button-dark-grey:hover {
+    background: linear-gradient(to bottom, #555, #333);
+    transform: scale(1.07);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,21 @@
+package com.scs.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import java.util.Date;
+
+@Entity
+@Table(name = "scorecards")
+@Data
+public class Scorecard {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String recruiterName;
+    private String performanceScale;
+    private int expectedInterviews;
+    private int achievedInterviews;
+    private int totalSubmissions;
+    private Date createdAt;
+}
